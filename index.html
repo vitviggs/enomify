@@ -102,7 +102,7 @@
                 <div id="offerModule" class="space-y-4">
                     <div class="mb-6 md:mb-8 p-4 md:p-6 bg-amber-50 rounded-xl border border-amber-100 text-center">
                         <p class="text-[10px] md:text-xs text-amber-800 font-bold uppercase tracking-widest mb-1">Direct Purchase Price</p>
-                        <div class="text-3xl md:text-4xl font-black text-gray-900 mb-4">$250000 <span class="text-sm md:text-lg text-gray-400 font-normal">USD</span></div>
+                        <div class="text-3xl md:text-4xl font-black text-gray-900 mb-4">$250,000 <span class="text-sm md:text-lg text-gray-400 font-normal">USD</span></div>
                         
                         <a href="YOUR_ESCROW_PAY_LINK" target="_blank" class="block w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 md:py-4 rounded-lg transition shadow-lg shadow-amber-200 text-center text-sm md:text-base active:scale-[0.98]">Buy It Now via Escrow.com</a>
                     </div>
@@ -172,6 +172,56 @@
             </div>
         </div>
 
+        <div id="otherDomainsModule" class="hidden w-full max-w-4xl border-t border-gray-200 pt-10 md:pt-16 px-4 mb-8 md:mb-10">
+            <h3 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-10">Other Premium Domains by This Seller</h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+                
+                <a href="https://Microreason.com" target="_blank" class="block p-5 bg-white rounded-xl shadow-sm border border-gray-100 hover:border-blue-400 hover:shadow-md hover:-translate-y-1 transition-all duration-200 group">
+                    <div class="flex justify-between items-start mb-2">
+                        <div class="font-extrabold text-xl md:text-2xl text-gray-900 group-hover:text-blue-600 transition-colors tracking-tight">Startup.sh</div>
+                        <span class="bg-green-50 text-green-600 border border-green-200 text-[10px] md:text-xs font-black px-2 py-1 rounded-md tracking-wide">$4,950</span>
+                    </div>
+                    <div class="text-xs md:text-sm text-gray-400 font-semibold uppercase tracking-widest flex items-center gap-1">
+                        View Details 
+                        <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                    </div>
+                </a>
+
+                <a href="https://Appearity.ai" target="_blank" class="block p-5 bg-white rounded-xl shadow-sm border border-gray-100 hover:border-blue-400 hover:shadow-md hover:-translate-y-1 transition-all duration-200 group">
+                    <div class="flex justify-between items-start mb-2">
+                        <div class="font-extrabold text-xl md:text-2xl text-gray-900 group-hover:text-blue-600 transition-colors tracking-tight">Cloud.sh</div>
+                        <span class="bg-green-50 text-green-600 border border-green-200 text-[10px] md:text-xs font-black px-2 py-1 rounded-md tracking-wide">$2,500</span>
+                    </div>
+                    <div class="text-xs md:text-sm text-gray-400 font-semibold uppercase tracking-widest flex items-center gap-1">
+                        View Details 
+                        <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                    </div>
+                </a>
+
+                <a href="https://DeepAccel.com" target="_blank" class="block p-5 bg-white rounded-xl shadow-sm border border-gray-100 hover:border-blue-400 hover:shadow-md hover:-translate-y-1 transition-all duration-200 group">
+                    <div class="flex justify-between items-start mb-2">
+                        <div class="font-extrabold text-xl md:text-2xl text-gray-900 group-hover:text-blue-600 transition-colors tracking-tight">Cloud.sh</div>
+                        <span class="bg-green-50 text-green-600 border border-green-200 text-[10px] md:text-xs font-black px-2 py-1 rounded-md tracking-wide">$2,500</span>
+                    </div>
+                    <div class="text-xs md:text-sm text-gray-400 font-semibold uppercase tracking-widest flex items-center gap-1">
+                        View Details 
+                        <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                    </div>
+                </a>
+
+                <div class="block p-5 bg-gray-50 rounded-xl border border-gray-200 opacity-75 cursor-not-allowed">
+                    <div class="flex justify-between items-start mb-2">
+                        <div class="font-extrabold text-xl md:text-2xl text-gray-400 tracking-tight line-through">Tech.sh</div>
+                        <span class="bg-red-50 text-red-500 border border-red-200 text-[10px] md:text-xs font-black uppercase px-2 py-1 rounded-md tracking-wide">Sold</span>
+                    </div>
+                    <div class="text-xs md:text-sm text-gray-400 font-semibold uppercase tracking-widest flex items-center gap-1">
+                        Asset Acquired
+                    </div>
+                </div>
+
+            </div>
+        </div>
         <div class="w-full max-w-4xl border-t border-gray-200 pt-10 md:pt-16 mb-16 md:mb-20 px-4">
             <h3 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">How the Transfer Works</h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center">
@@ -208,6 +258,9 @@
         // ⚠️ SET TO FALSE: Because your domain is car.sh, this prevents offering car.net/car.org for free.
         const ENABLE_BONUS_BUNDLE = false; 
         
+        // 🎛️ NEW TOGGLE: Set to true to show your other domains, or false to hide them entirely.
+        const ENABLE_OTHER_DOMAINS = true; 
+        
         const DOMAIN_LOGO_URL = ""; 
         const BROKER_LOGO_URL = ""; 
 
@@ -240,6 +293,11 @@
                     document.getElementById('bonusDomainOrg').innerText = baseName + '.org';
                 }
             }
+
+            // Unhide the other domains module if the toggle is set to true
+            if (ENABLE_OTHER_DOMAINS) {
+                document.getElementById('otherDomainsModule').classList.remove('hidden');
+            }
         }
         initDisplaySettings();
 
@@ -268,11 +326,10 @@
         // ----------------------------------------------------
         // JS SUB-SECTION D: FIREBASE LIVE COUNTER
         // ----------------------------------------------------
-        // 🛑 CHANGE THIS: Replace with your Firebase credentials
         const firebaseConfig = {
             apiKey: "AIzaSyC9XfwC3bh8_9CFF9vEqmWcI2gsX9sN2Ec",
             authDomain: "car-shdb.firebaseapp.com",
-            databaseURL: "https://console.firebase.google.com/u/0/project/car-shdb/database/car-shdb-default-rtdb/data/~2F",
+            databaseURL: "https://car-shdb-default-rtdb.firebaseio.com", 
             projectId: "car-shdb",
             storageBucket: "car-shdb.appspot.com",
             messagingSenderId: "40959583223",
@@ -337,7 +394,6 @@
             
             if (isOfferForm) {
                 const bidVal = parseInt(document.getElementById('bidAmount').value);
-                // 🛑 CHANGE THIS (Optional): Change '1000' minimum bid to match your form
                 if (bidVal < 1000) return alert("The minimum offer is $1,000.");
             }
             if (!grecaptcha.getResponse()) return alert("Please complete the reCAPTCHA to confirm you are human.");
@@ -393,9 +449,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
