@@ -2,227 +2,394 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     
     <title>Car.sh is for Sale | Premium Digital Asset</title>
-    <meta name="description" content="Acquire Car.sh. Premium .com domain available for immediate transfer via secure escrow.">
-    <meta property="og:title" content="Car.sh - Domain for Sale">
-    <meta property="og:description" content="Secure this premium brand identity today. Instant transfer available.">
-    <meta property="og:type" content="website">
+    <meta name="description" content="Acquire Car.sh. A high-authority domain perfect for your next brand. Secure transfer via Escrow.com.">
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://car.sh/">
+    <meta property="og:title" content="Car.sh - Premium Domain for Sale">
+    <meta property="og:description" content="Secure this premium brand identity today. Instant transfer available. Verified ownership via Escrow.com.">
+    <meta property="og:image" content="https://car.sh/social-preview.png">
+
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Car.sh is for Sale">
+    <meta property="twitter:description" content="Establish immediate authority with this premium extension.">
+    <meta property="twitter:image" content="https://car.sh/social-preview.png">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-03YQJ6MP7C"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
+        gtag('config', 'G-03YQJ6MP7C');
     </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .g-recaptcha { display: flex; justify-content: center; margin-bottom: 1rem; transform: scale(0.95); transform-origin: center; }
     </style>
 </head>
 
 <body class="bg-gray-50 text-gray-900">
 
-    <div class="min-h-screen flex flex-col items-center p-6 md:p-12">
+    <div class="min-h-screen flex flex-col items-center p-4 sm:p-6 md:p-12">
         
-        <nav class="w-full max-w-5xl flex justify-between items-center mb-16">
-            <div class="flex items-center gap-2">
-                <svg width="35" height="35" viewBox="0 0 40 40" fill="none" class="text-blue-600">
-                    <rect width="40" height="40" rx="8" fill="currentColor" fill-opacity="0.1"/>
-                    <path d="M20 10L28.6603 25H11.3397L20 10Z" fill="currentColor"/>
-                </svg>
-                <span class="text-xl font-bold tracking-tight">Get this domain<span class="text-blue-600"> now</span></span>
-            </div>
-            <div class="hidden md:block text-xs font-bold uppercase tracking-widest text-gray-400">Secure Transfer Guaranteed</div>
+        <nav class="w-full max-w-5xl flex justify-between items-center mb-10 md:mb-16">
+            <a href="/" id="brokerBrandContainer" class="flex items-center gap-2 hover:opacity-80 transition cursor-pointer" title="Return to Homepage">
+                <div id="brokerDefaultBrand" class="flex items-center gap-2">
+                    <svg width="30" height="30" viewBox="0 0 40 40" fill="none" class="text-blue-600 md:w-[35px] md:h-[35px]">
+                        <rect width="40" height="40" rx="8" fill="currentColor" fill-opacity="0.1"/>
+                        <path d="M20 10L28.6603 25H11.3397L20 10Z" fill="currentColor"/>
+                    </svg>
+                    <span class="text-lg md:text-xl font-bold tracking-tight">Domain<span class="text-blue-600">Assets</span></span>
+                </div>
+                <img id="brokerCustomLogo" src="" alt="Broker Logo" class="hidden h-7 md:h-10 w-auto object-contain drop-shadow-sm">
+            </a>
+            <div class="hidden sm:block text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-400">Secure Escrow Transfer</div>
         </nav>
 
-        <header class="text-center mb-10">
-            <div class="flex flex-wrap justify-center items-center gap-2 mb-4">
-                <span class="bg-blue-100 text-blue-700 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">Premium .COM</span>
-                <span class="bg-green-100 text-green-700 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-green-200 animate-pulse">Live Listing</span>
-                <span class="bg-amber-100 text-amber-700 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-widest border border-amber-200">⚡ Buy It Now Available</span>
+        <header class="text-center mb-8 md:mb-10 flex flex-col items-center w-full">
+            <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-4 w-full px-2">
+                <h1 id="domainText" class="text-5xl sm:text-6xl md:text-8xl font-extrabold text-gray-900 tracking-tight break-all">Car.sh</h1>
+                
+                <button onclick="copyDomainToClipboard()" id="copyBtn" class="text-gray-400 hover:text-blue-600 transition p-2 rounded-full hover:bg-blue-50 active:scale-95" title="Copy Domain Name">
+                    <svg id="copyIconDefault" class="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                    </svg>
+                    <svg id="copyIconSuccess" class="w-6 h-6 sm:w-8 sm:h-8 hidden text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                </button>
             </div>
-            <h1 class="text-5xl md:text-7xl font-extrabold text-gray-900 tracking-tight">Car.sh</h1>
-            <p class="text-gray-500 mt-6 text-lg max-w-2xl mx-auto leading-relaxed">The foundation of your brand starts with the right name. Acquire this high-authority domain and own your market.</p>
+            
+            <img id="domainLogo" src="" alt="Premium Domain Logo" class="hidden h-auto max-h-16 sm:max-h-24 md:max-h-32 mb-4 w-full max-w-2xl object-contain drop-shadow-sm px-4">
+
+            <div class="flex justify-center gap-4 mt-4 md:mt-6">
+                <div class="bg-white px-5 py-2 md:px-6 md:py-3 rounded-xl shadow-sm border border-gray-100 flex flex-col items-center">
+                    <p class="text-[9px] md:text-[10px] text-gray-400 uppercase font-black tracking-widest">Live Visitors</p>
+                    <p id="visitor-count" class="text-xl md:text-2xl font-bold text-blue-600">1</p>
+                </div>
+            </div>
         </header>
 
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-10 w-full max-w-2xl">
-            <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 text-center">
-                <p class="text-[10px] text-gray-400 uppercase font-bold tracking-widest">Active Visitors</p>
-                <p id="visitor-count" class="text-2xl font-bold text-blue-600">1,240</p>
-            </div>
-            <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 text-center">
-                <p class="text-[10px] text-gray-400 uppercase font-bold tracking-widest">Inquiries</p>
-                <p class="text-2xl font-bold text-blue-600">18</p>
-            </div>
-            <div class="hidden md:block bg-white p-5 rounded-xl shadow-sm border border-gray-100 text-center">
-                <p class="text-[10px] text-gray-400 uppercase font-bold tracking-widest">Trust Score</p>
-                <p class="text-2xl font-bold text-green-500">9.8/10</p>
-            </div>
-        </div>
-
-        <div class="w-full max-w-lg shadow-2xl rounded-2xl overflow-hidden mb-20">
-            <div class="bg-gray-900 text-white p-4 flex justify-between items-center px-8 border-b border-gray-800">
-                <span class="text-[10px] uppercase font-bold tracking-widest text-blue-400">Limited Time Offer:</span>
-                <div class="flex gap-4 font-mono text-xl">
-                    <div class="text-center"><span id="days">00</span><span class="text-[8px] block uppercase text-gray-500">Days</span></div>
-                    <div class="text-center"><span id="hours">00</span><span class="text-[8px] block uppercase text-gray-500">Hrs</span></div>
-                    <div class="text-center"><span id="minutes">00</span><span class="text-[8px] block uppercase text-gray-500">Min</span></div>
-                    <div class="text-center text-blue-500"><span id="seconds">00</span><span class="text-[8px] block uppercase text-gray-500">Sec</span></div>
+        <div class="w-full max-w-lg shadow-2xl rounded-2xl overflow-hidden bg-white mb-8 md:mb-10 mx-2">
+            
+            <div class="bg-gray-900 text-white p-3 md:p-4 flex justify-between items-center px-4 md:px-8 border-b border-gray-800">
+                <span class="text-[9px] md:text-[10px] uppercase font-bold tracking-widest text-blue-400">Limited Offer:</span>
+                <div class="flex gap-2 sm:gap-4 font-mono text-base sm:text-xl">
+                    <div class="text-center"><span id="days">00</span><span class="text-[7px] md:text-[8px] block uppercase text-gray-500">Days</span></div>
+                    <div class="text-center"><span id="hours">00</span><span class="text-[7px] md:text-[8px] block uppercase text-gray-500">Hrs</span></div>
+                    <div class="text-center"><span id="minutes">00</span><span class="text-[7px] md:text-[8px] block uppercase text-gray-500">Min</span></div>
+                    <div class="text-center text-blue-500"><span id="seconds">00</span><span class="text-[7px] md:text-[8px] block uppercase text-gray-500">Sec</span></div>
                 </div>
             </div>
 
-            <div class="bg-white p-8">
-                <div class="mb-8 p-6 bg-amber-50 rounded-xl border border-amber-100 text-center">
-                    <p class="text-xs text-amber-800 font-bold uppercase tracking-widest mb-1">Direct Purchase Price</p>
-                    <div class="text-4xl font-black text-gray-900 mb-4">$250.000 <span class="text-lg text-gray-400 font-normal">USD</span></div>
-                    <a href="https://www.escrow.com" target="_blank" class="block w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 rounded-lg transition shadow-lg shadow-amber-200 text-center">Buy It Now & Start Transfer</a>
-                    <p class="text-[10px] text-amber-600 mt-2 font-bold uppercase tracking-tighter">Secure Instant Transfer via Escrow.com</p>
+            <div class="p-5 sm:p-8">
+                <div class="flex border-b border-gray-100 mb-6" id="tabsContainer">
+                    <button id="tabOffer" onclick="switchTab('offer')" class="flex-1 pb-3 text-xs sm:text-sm font-bold uppercase tracking-widest border-b-2 border-blue-600 text-blue-600 active:bg-gray-50">Make Offer</button>
+                    <button id="tabMessage" onclick="switchTab('message')" class="flex-1 pb-3 text-xs sm:text-sm font-bold uppercase tracking-widest border-b-2 border-transparent text-gray-400 hover:text-gray-600 transition active:bg-gray-50">Send Message</button>
                 </div>
 
-                <div class="relative flex py-4 items-center"><div class="flex-grow border-t"></div><span class="mx-4 text-gray-400 text-[10px] font-bold uppercase tracking-widest">Or Negotiate</span><div class="flex-grow border-t"></div></div>
-
-                <form id="offerForm" action="https://formspree.io/f/xaqdjzql" method="POST" class="space-y-4">
-                    <input type="email" name="email" required placeholder="Your Email Address" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition">
-                    <input type="number" name="bid" required placeholder="Your Offer Amount (USD)" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none transition">
-                    <button type="submit" class="w-full bg-gray-900 text-white font-bold py-3 rounded-lg hover:bg-black transition shadow-lg">Submit Secure Offer</button>
-                </form>
-            </div>
-        </div>
-
-        <div class="w-full max-w-4xl grid md:grid-cols-2 gap-12 mb-20 px-4">
-            <div class="flex gap-4">
-                <div class="bg-blue-600 text-white p-3 rounded-xl h-fit shadow-md">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
-                </div>
-                <div><h4 class="font-bold text-gray-800">SEO Authority</h4><p class="text-sm text-gray-500 mt-1 leading-relaxed">Exact match and premium .com domains rank faster and reduce long-term PPC costs.</p></div>
-            </div>
-            <div class="flex gap-4">
-                <div class="bg-blue-600 text-white p-3 rounded-xl h-fit shadow-md">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                </div>
-                <div><h4 class="font-bold text-gray-800">Instant Brand Trust</h4><p class="text-sm text-gray-500 mt-1 leading-relaxed">Establish immediate credibility with investors and customers using a high-tier extension.</p></div>
-            </div>
-        </div>
-
-        <div class="w-full max-w-4xl mb-20">
-            <div class="bg-gray-900 rounded-2xl overflow-hidden shadow-xl flex flex-col md:flex-row">
-                <div class="p-10 md:w-1/3 bg-gray-800 flex flex-col justify-center">
-                    <span class="text-green-400 text-[10px] font-black uppercase tracking-widest mb-2">Verified Owner</span>
-                    <h3 class="text-2xl font-bold text-white mb-4">Ownership Confirmed</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">This asset is fully authenticated and ready for immediate push to your registrar.</p>
-                </div>
-                <div class="md:w-2/3 bg-gray-700 p-8 flex items-center justify-center">
-                    <div class="relative w-full rounded-lg border border-gray-600 bg-gray-800 aspect-video flex items-center justify-center overflow-hidden">
-                        <img src="https://via.placeholder.com/800x450/111827/FFFFFF?text=Registrar+Screenshot+Goes+Here" alt="Proof" class="w-full h-full object-cover opacity-40">
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="bg-white/10 backdrop-blur-md border border-white/20 px-6 py-2 rounded-full text-white text-xs font-bold uppercase tracking-widest flex items-center gap-2">
-                                <span class="w-2 h-2 bg-green-500 rounded-full animate-ping"></span> Secured Listing
-                            </div>
-                        </div>
+                <div id="offerModule" class="space-y-4">
+                    <div class="mb-6 md:mb-8 p-4 md:p-6 bg-amber-50 rounded-xl border border-amber-100 text-center">
+                        <p class="text-[10px] md:text-xs text-amber-800 font-bold uppercase tracking-widest mb-1">Direct Purchase Price</p>
+                        <div class="text-3xl md:text-4xl font-black text-gray-900 mb-4">$4,950 <span class="text-sm md:text-lg text-gray-400 font-normal">USD</span></div>
+                        
+                        <a href="YOUR_ESCROW_PAY_LINK" target="_blank" class="block w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 md:py-4 rounded-lg transition shadow-lg shadow-amber-200 text-center text-sm md:text-base active:scale-[0.98]">Buy It Now via Escrow.com</a>
                     </div>
+
+                    <div class="relative flex py-2 md:py-4 items-center"><div class="flex-grow border-t"></div><span class="mx-4 text-gray-400 text-[9px] md:text-[10px] font-bold uppercase tracking-widest">Or Negotiate</span><div class="flex-grow border-t"></div></div>
+
+                    <form id="offerForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="space-y-4">
+                        <input type="hidden" name="_subject" value="NEW OFFER: Car.sh">
+                        <input type="email" name="email" required placeholder="Your Email Address" class="w-full p-3 text-base border rounded-lg outline-none focus:ring-2 focus:ring-blue-500 transition">
+                        <div>
+                            <input type="number" name="bid" id="bidAmount" required min="1000" placeholder="Offer Amount (USD)" class="w-full p-3 text-base border rounded-lg outline-none focus:ring-2 focus:ring-blue-500 transition">
+                            <p class="text-[9px] md:text-[10px] text-blue-600 mt-1 ml-1 font-bold uppercase tracking-widest">Minimum offer: $1,000 USD</p>
+                        </div>
+                        <div class="bg-gray-50 p-2 sm:p-4 rounded-xl border border-dashed border-gray-200 overflow-hidden">
+                            <div class="g-recaptcha" data-sitekey="6LfNPXEsAAAAAM7HpzLiDgsREf88L_N6kflcWftS"></div>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 md:py-4 rounded-lg hover:bg-blue-700 transition shadow-lg shadow-blue-100 text-sm md:text-base active:scale-[0.98]">Submit Secure Offer</button>
+                    </form>
+                </div>
+
+                <div id="messageModule" class="hidden space-y-4">
+                    <p class="text-xs sm:text-sm text-gray-500 text-center mb-4">Choose your preferred contact method:</p>
+                    
+                    <a href="https://wa.me/YOUR_PHONE_NUMBER?text=I'm%20interested%20in%20Car.sh" target="_blank" class="flex items-center justify-center gap-2 w-full border-2 border-[#25D366] text-[#25D366] font-bold py-3 rounded-lg hover:bg-[#25D366] hover:text-white transition active:scale-[0.98] text-sm md:text-base">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.634 1.437h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                        Chat on WhatsApp
+                    </a>
+
+                    <div class="relative flex py-2 items-center"><div class="flex-grow border-t"></div><span class="mx-3 text-gray-300 text-[9px] md:text-[10px] font-bold uppercase tracking-widest">or email us</span><div class="flex-grow border-t"></div></div>
+
+                    <form id="messageForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="space-y-4">
+                        <input type="hidden" name="_subject" value="INQUIRY: Car.sh">
+                        <input type="email" name="email" required placeholder="Your Email Address" class="w-full p-3 text-base border rounded-lg outline-none focus:ring-2 focus:ring-blue-500 transition">
+                        <textarea name="message" required rows="4" placeholder="How can we help you?" class="w-full p-3 text-base border rounded-lg outline-none focus:ring-2 focus:ring-blue-500 transition"></textarea>
+                        <div class="bg-gray-50 p-2 sm:p-4 rounded-xl border border-dashed border-gray-200 overflow-hidden">
+                            <div class="g-recaptcha" data-sitekey="6LfNPXEsAAAAAM7HpzLiDgsREf88L_N6kflcWftS"></div>
+                        </div>
+                        <button type="submit" class="w-full bg-gray-900 text-white font-bold py-3 md:py-4 rounded-lg hover:bg-black transition shadow-lg text-sm md:text-base active:scale-[0.98]">Send Message</button>
+                    </form>
+                </div>
+                
+                <div id="successMessage" class="hidden text-center py-8 md:py-10">
+                    <div class="text-5xl md:text-6xl mb-4">🎉</div>
+                    <h3 class="text-xl md:text-2xl font-bold text-gray-800">Sent Successfully!</h3>
+                    <p class="text-sm md:text-base text-gray-500 mt-2">We have received your submission and will be in touch shortly.</p>
                 </div>
             </div>
         </div>
 
-        <div class="w-full max-w-4xl border-t border-gray-200 pt-16 mb-20">
-            <h3 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h3>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="p-6 bg-white rounded-xl border border-gray-50 shadow-sm">
-                    <h4 class="font-bold text-blue-600 mb-2">How do I receive the domain?</h4>
-                    <p class="text-sm text-gray-600">After payment, we provide the EPP/Auth code. You then "transfer" it into your own account at any registrar like GoDaddy or Namecheap.</p>
+        <div id="bonusBundleModule" class="hidden w-full max-w-lg md:max-w-4xl bg-gradient-to-br from-green-50 to-emerald-50 border border-green-200 rounded-2xl p-5 md:p-8 mb-10 md:mb-16 shadow-sm mx-2">
+            <div class="flex flex-col md:flex-row items-center gap-4 md:gap-6">
+                <div class="w-12 h-12 md:w-16 md:h-16 bg-green-500 text-white rounded-full flex items-center justify-center shrink-0 shadow-lg shadow-green-200">
+                    <svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path>
+                    </svg>
                 </div>
-                <div class="p-6 bg-white rounded-xl border border-gray-50 shadow-sm">
-                    <h4 class="font-bold text-blue-600 mb-2">Is the escrow service safe?</h4>
-                    <p class="text-sm text-gray-600">Yes, the escrow agent holds your funds safely and only releases them to the seller once you have successfully received the domain.</p>
+                <div class="flex-1 text-center md:text-left">
+                    <span class="bg-green-200 text-green-800 text-[9px] md:text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full mb-2 md:mb-3 inline-block">Included Free</span>
+                    <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">Complete Brand Protection Bundle</h3>
+                    <p class="text-xs md:text-sm text-gray-600 leading-relaxed">Don't leave your brand exposed. When you acquire the premium domain asset, we will include the alternative extensions in the transfer at absolutely no extra cost.</p>
+                </div>
+                <div class="bg-white p-3 md:p-4 rounded-xl border border-green-100 shadow-sm w-full md:w-auto text-center shrink-0">
+                    <p id="bonusDomainNet" class="text-gray-400 line-through text-xs md:text-sm font-medium">Loading...</p>
+                    <p id="bonusDomainOrg" class="text-gray-400 line-through text-xs md:text-sm font-medium mb-2">Loading...</p>
+                    <div class="text-green-600 font-black text-lg md:text-xl border-t border-green-50 pt-2 tracking-tight">FREE</div>
                 </div>
             </div>
         </div>
 
-        <div class="w-full max-w-4xl bg-white border border-gray-200 rounded-2xl p-8 flex flex-col md:flex-row items-center gap-8 shadow-sm mb-12">
-            <div class="w-20 h-20 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-2xl border-4 border-white shadow-sm">VG</div>
-            <div class="flex-1 text-center md:text-left">
-                <h4 class="text-xl font-bold">Premium Domain Seller</h4>
-                <p class="text-sm text-gray-500">Expert in digital real estate with 100+ successful transfers. Quick responder.</p>
-                <div class="flex justify-center md:justify-start gap-4 mt-3">
-                    <a href="#" class="text-gray-400 hover:text-blue-600 transition text-xs font-bold uppercase tracking-tighter">LinkedIn</a>
-                    <a href="#" class="text-gray-400 hover:text-black transition text-xs font-bold uppercase tracking-tighter">X / Twitter</a>
+        <div class="w-full max-w-4xl border-t border-gray-200 pt-10 md:pt-16 mb-16 md:mb-20 px-4">
+            <h3 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">How the Transfer Works</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center">
+                <div class="p-5 md:p-6 bg-white rounded-xl shadow-sm border border-gray-100">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold mx-auto mb-4">1</div>
+                    <h4 class="font-bold mb-2">Secure Payment</h4>
+                    <p class="text-xs md:text-sm text-gray-600">Buyer pays via <strong>Escrow.com</strong>. Funds are held safely in a secure third-party account.</p>
                 </div>
-            </div>
-            <div class="text-center md:text-right border-t md:border-t-0 md:border-l border-gray-100 pt-6 md:pt-0 md:pl-8">
-                <p class="text-[10px] uppercase font-bold text-gray-400 mb-1">Direct Contact</p>
-                <a href="mailto:technocogito@gmail.com" class="text-blue-600 font-bold hover:underline text-lg">technocogito@gmail.com</a>
+                <div class="p-5 md:p-6 bg-white rounded-xl shadow-sm border border-gray-100">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold mx-auto mb-4">2</div>
+                    <h4 class="font-bold mb-2">Domain Handover</h4>
+                    <p class="text-xs md:text-sm text-gray-600">We provide the EPP/Auth code to instantly transfer the domain to your preferred registrar.</p>
+                </div>
+                <div class="p-5 md:p-6 bg-white rounded-xl shadow-sm border border-gray-100">
+                    <div class="w-10 h-10 md:w-12 md:h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold mx-auto mb-4">3</div>
+                    <h4 class="font-bold mb-2">Funds Released</h4>
+                    <p class="text-xs md:text-sm text-gray-600">Once you confirm receipt and control of the domain, Escrow.com releases the funds to us.</p>
+                </div>
             </div>
         </div>
 
-        <footer class="text-gray-400 text-[10px] font-bold uppercase tracking-widest">&copy; 2026 Professional Domain Brokerage. All Rights Reserved.</footer>
+        <footer class="text-gray-400 text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-center mb-10">&copy; 2026 Premium Domain Assets. All Rights Reserved.</footer>
     </div>
 
-    <script>
-        // 1. Live Visitor Counter
-        function simulateVisitors() {
-            const el = document.getElementById('visitor-count');
-            let count = parseInt(el.innerText.replace(',', ''));
-            count += Math.floor(Math.random() * 3) + 1;
-            el.innerText = count.toLocaleString();
-        }
-        setInterval(simulateVisitors, 5000);
+    <a href="https://wa.me/YOUR_PHONE_NUMBER?text=I'm%20interested%20in%20Car.sh" target="_blank" class="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 bg-[#25D366] text-white p-3 md:p-4 rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-transform flex items-center justify-center group">
+        <svg class="w-6 h-6 md:w-7 md:h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.94 3.659 1.437 5.634 1.437h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    </a>
 
-        // 2. Countdown Timer Logic
-        const targetDate = new Date().getTime() + (2 * 24 * 60 * 60 * 1000);
+    <script>
+        // ----------------------------------------------------
+        // JS SUB-SECTION A: CONFIGURATION VARIABLES
+        // ----------------------------------------------------
+        
+        // ⚠️ SET TO FALSE: Because your domain is car.sh, this prevents offering car.net/car.org for free.
+        const ENABLE_BONUS_BUNDLE = false; 
+        
+        const DOMAIN_LOGO_URL = ""; 
+        const BROKER_LOGO_URL = ""; 
+
+        // ----------------------------------------------------
+        // JS SUB-SECTION B: INITIALIZATION LOGIC
+        // ----------------------------------------------------
+        function initDisplaySettings() {
+            const mainDomainText = document.getElementById('domainText').innerText.trim();
+
+            if (DOMAIN_LOGO_URL.trim() !== "") {
+                const logoEl = document.getElementById('domainLogo');
+                logoEl.src = DOMAIN_LOGO_URL;
+                logoEl.alt = mainDomainText + " Premium Logo";
+                logoEl.classList.remove('hidden');
+                document.getElementById('domainText').parentElement.classList.add('hidden'); 
+            }
+
+            if (BROKER_LOGO_URL.trim() !== "") {
+                const brokerCustom = document.getElementById('brokerCustomLogo');
+                brokerCustom.src = BROKER_LOGO_URL;
+                brokerCustom.classList.remove('hidden');
+                document.getElementById('brokerDefaultBrand').classList.add('hidden');
+            }
+
+            if (ENABLE_BONUS_BUNDLE) {
+                document.getElementById('bonusBundleModule').classList.remove('hidden');
+                const baseName = mainDomainText.substring(0, mainDomainText.lastIndexOf('.'));
+                if (baseName) {
+                    document.getElementById('bonusDomainNet').innerText = baseName + '.net';
+                    document.getElementById('bonusDomainOrg').innerText = baseName + '.org';
+                }
+            }
+        }
+        initDisplaySettings();
+
+        // ----------------------------------------------------
+        // JS SUB-SECTION C: COPY TO CLIPBOARD
+        // ----------------------------------------------------
+        async function copyDomainToClipboard() {
+            const domainName = document.getElementById('domainText').innerText.trim();
+            const iconDefault = document.getElementById('copyIconDefault');
+            const iconSuccess = document.getElementById('copyIconSuccess');
+            
+            try {
+                await navigator.clipboard.writeText(domainName);
+                iconDefault.classList.add('hidden');
+                iconSuccess.classList.remove('hidden');
+                
+                setTimeout(() => {
+                    iconSuccess.classList.add('hidden');
+                    iconDefault.classList.remove('hidden');
+                }, 2000);
+            } catch (err) {
+                alert("Failed to copy domain name. Please select and copy manually.");
+            }
+        }
+
+        // ----------------------------------------------------
+        // JS SUB-SECTION D: FIREBASE LIVE COUNTER
+        // ----------------------------------------------------
+        // 🛑 CHANGE THIS: Replace with your Firebase credentials
+        const firebaseConfig = {
+            apiKey: "AIzaSyC9XfwC3bh8_9CFF9vEqmWcI2gsX9sN2Ec",
+            authDomain: "car-shdb.firebaseapp.com",
+            databaseURL: "https://console.firebase.google.com/u/0/project/car-shdb/database/car-shdb-default-rtdb/data/~2F",
+            projectId: "car-shdb",
+            storageBucket: "car-shdb.appspot.com",
+            messagingSenderId: "40959583223",
+            appId: "1:40959583223:web:0b657e9219db4ed5a9c4f2"
+        };
+        
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.database();
+        const visitorCountRef = db.ref('live_visitors');
+        
+        db.ref('.info/connected').on('value', (snap) => {
+            if (snap.val() === true) {
+                const myPresence = visitorCountRef.push(true);
+                myPresence.onDisconnect().remove();
+            }
+        });
+        visitorCountRef.on('value', (snap) => {
+            document.getElementById('visitor-count').innerText = snap.numChildren() || 1;
+        });
+
+        // ----------------------------------------------------
+        // JS SUB-SECTION E: URGENCY COUNTDOWN TIMER
+        // ----------------------------------------------------
+        const targetDate = new Date().getTime() + (2 * 24 * 60 * 60 * 1000); 
         setInterval(() => {
             const now = new Date().getTime();
             const d = targetDate - now;
-            document.getElementById("days").innerText = Math.floor(d / (1000 * 60 * 60 * 24));
-            document.getElementById("hours").innerText = Math.floor((d % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            document.getElementById("minutes").innerText = Math.floor((d % (1000 * 60 * 60)) / (1000 * 60));
-            document.getElementById("seconds").innerText = Math.floor((d % (1000 * 60)) / 1000);
+            document.getElementById("days").innerText = Math.floor(d / 86400000).toString().padStart(2, '0');
+            document.getElementById("hours").innerText = Math.floor((d % 86400000) / 3600000).toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = Math.floor((d % 3600000) / 60000).toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = Math.floor((d % 60000) / 1000).toString().padStart(2, '0');
         }, 1000);
 
-        // 3. AJAX Form Submission
-        const form = document.getElementById('offerForm');
-        form.onsubmit = async (e) => {
-            e.preventDefault();
-            const btn = form.querySelector('button');
-            btn.disabled = true;
-            btn.innerText = "Processing Offer...";
-            
-            const response = await fetch(form.action, {
-                method: 'POST',
-                body: new FormData(form),
-                headers: { 'Accept': 'application/json' }
-            });
-            
-            if (response.ok) {
-                gtag('event', 'conversion', { 'send_to': 'G-XXXXXXXXXX', 'value': form.bid.value, 'currency': 'USD' });
-                form.parentElement.innerHTML = `
-                    <div class="text-center py-10 bg-green-50 rounded-xl border border-green-100">
-                        <div class="text-green-500 text-5xl mb-4">✓</div>
-                        <h3 class="text-xl font-bold text-gray-800">Offer Submitted!</h3>
-                        <p class="text-gray-500 mt-2">We have sent a confirmation to your email.</p>
-                    </div>`;
+        // ----------------------------------------------------
+        // JS SUB-SECTION F: TAB SWITCHING
+        // ----------------------------------------------------
+        function switchTab(type) {
+            const offerMod = document.getElementById('offerModule');
+            const msgMod = document.getElementById('messageModule');
+            const tabOffer = document.getElementById('tabOffer');
+            const tabMsg = document.getElementById('tabMessage');
+
+            if (type === 'offer') {
+                offerMod.classList.remove('hidden');
+                msgMod.classList.add('hidden');
+                tabOffer.classList.add('border-blue-600', 'text-blue-600');
+                tabMsg.classList.remove('border-blue-600', 'text-blue-600');
             } else {
+                offerMod.classList.add('hidden');
+                msgMod.classList.remove('hidden');
+                tabMsg.classList.add('border-blue-600', 'text-blue-600');
+                tabOffer.classList.remove('border-blue-600', 'text-blue-600');
+            }
+            if(window.grecaptcha) grecaptcha.reset(); 
+        }
+
+        // ----------------------------------------------------
+        // JS SUB-SECTION G: FORM SUBMIT & GA4 TRACKING
+        // ----------------------------------------------------
+        async function handleFormSubmit(e, formElement, isOfferForm) {
+            e.preventDefault();
+            
+            if (isOfferForm) {
+                const bidVal = parseInt(document.getElementById('bidAmount').value);
+                // 🛑 CHANGE THIS (Optional): Change '1000' minimum bid to match your form
+                if (bidVal < 1000) return alert("The minimum offer is $1,000.");
+            }
+            if (!grecaptcha.getResponse()) return alert("Please complete the reCAPTCHA to confirm you are human.");
+
+            const btn = formElement.querySelector('button');
+            btn.disabled = true;
+            btn.innerText = "Processing...";
+
+            try {
+                const response = await fetch(formElement.action, {
+                    method: 'POST',
+                    body: new FormData(formElement),
+                    headers: { 'Accept': 'application/json' }
+                });
+
+                if (response.ok) {
+                    if (typeof gtag === 'function') {
+                        if (isOfferForm) {
+                            const bidVal = document.getElementById('bidAmount').value;
+                            gtag('event', 'generate_lead', {
+                                'event_category': 'Domain Sale',
+                                'event_label': 'Offer Submitted',
+                                'value': parseInt(bidVal),
+                                'currency': 'USD'
+                            });
+                        } else {
+                            gtag('event', 'contact', {
+                                'event_category': 'Domain Sale',
+                                'event_label': 'Message Sent'
+                            });
+                        }
+                    }
+
+                    document.getElementById('offerModule').classList.add('hidden');
+                    document.getElementById('messageModule').classList.add('hidden');
+                    document.getElementById('tabsContainer').classList.add('hidden');
+                    document.getElementById('successMessage').classList.remove('hidden');
+                    
+                    confetti({ particleCount: 150, spread: 80, origin: { y: 0.6 }, colors: ['#2563eb', '#10b981', '#f59e0b'] });
+                } else {
+                    throw new Error("Server rejected submission");
+                }
+            } catch (err) {
                 btn.disabled = false;
                 btn.innerText = "Try Again";
-                alert("Something went wrong. Please try again.");
+                alert("There was an error sending your request. Please try again.");
+                grecaptcha.reset();
             }
-        };
+        }
+
+        document.getElementById('offerForm').addEventListener('submit', (e) => handleFormSubmit(e, e.target, true));
+        document.getElementById('messageForm').addEventListener('submit', (e) => handleFormSubmit(e, e.target, false));
     </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
